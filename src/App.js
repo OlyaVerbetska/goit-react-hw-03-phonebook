@@ -19,19 +19,13 @@ class App extends Component {
 
     filter: '',
   };
-  //==================================================================
+ 
   // сохранение в LocalStorage
   componentDidMount() {
     console.log('did mount');
     const myContacts = localStorage.getItem('My Contacts');
     const parsedMyContacts = JSON.parse(myContacts);
-    // if (parsedMytodos.length === 0) {
-    //   this.setState({
-    //     todos: initialTodos,
-    //   });
-    // }
 
-    // если в тудус пусто [], то
     if (parsedMyContacts) {
       this.setState({
         contacts: parsedMyContacts,
@@ -43,13 +37,10 @@ class App extends Component {
     }
   }
   componentDidUpdate(prevProps, prevState) {
-    //  здесь можно вызвать сет Стейт только по проверке условия
     if (prevState.contacts !== this.state.contacts) {
       localStorage.setItem('My Contacts', JSON.stringify(this.state.contacts));
     }
   }
-
-  //==================================================================
 
   addContact = ({ name, number }) => {
     const contactData = {

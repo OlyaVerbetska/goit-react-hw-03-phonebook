@@ -22,8 +22,7 @@ class App extends Component {
  
   // сохранение в LocalStorage
   componentDidMount() {
-    console.log('did mount');
-    const myContacts = localStorage.getItem('My Contacts');
+        const myContacts = localStorage.getItem('My Contacts');
     const parsedMyContacts = JSON.parse(myContacts);
 
     if (parsedMyContacts) {
